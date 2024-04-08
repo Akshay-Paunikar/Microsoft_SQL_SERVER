@@ -118,8 +118,36 @@ that particular table. It is basically a DDL(data definition language) which is 
 to undo the command. Therefore, the drop command must be used with extensive care. It can also delete a whole database or can simply delete a table, it depends on 
 the wish of the user.*/
 
-DROP TABLE customer_copy;
 DROP TABLE customer_copy_2;
 DROP TABLE customer_copy_3;
 DROP TABLE student;
 
+------------------
+-- DELETE TABLE --
+------------------
+
+/*SQL DELETE is a basic SQL operation used to delete data in a database. SQL DELETE is an important part of database management. 
+DELETE can be used to selectively remove records from a database table based on certain conditions. This SQL DELETE operation is 
+important for database size management, data accuracy, and integrity.*/
+
+SELECT * FROM customer_copy;
+
+/*let's delete record where CustomerName = Aditya.*/
+
+DELETE FROM customer_copy
+WHERE CustomerName = 'Aditya';
+
+SELECT * FROM customer_copy;
+
+/* Multiple Records Deletion */
+
+DELETE FROM customer_copy
+WHERE Age < 23;
+
+SELECT * FROM customer_copy;
+
+/* DELETE ALL RECORDS */
+
+DELETE FROM customer_copy;
+
+/* NOTE: DELETE is a Data Manipulation Language (DML). Hence operations performed by DELETE can be rolled back or undone. */
