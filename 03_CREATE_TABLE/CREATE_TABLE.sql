@@ -236,3 +236,30 @@ INSERT INTO ##EmpDetails VALUES (01, 'Lalit'), (02, 'Atharva');
 
 SELECT * FROM ##EmpDetails;
 
+-------------------------------------
+-- ALTER TABLE – ADD, DROP, MODIFY --
+-------------------------------------
+
+/* The ALTER TABLE statement in SQL is used to add, remove, or modify columns in an existing table. The ALTER TABLE statement is also used to add and remove 
+various constraints on existing tables.*/
+
+/* ALTER TABLE ADD Column Statement in SQL */
+
+SELECT * FROM customer_copy;
+
+ALTER TABLE customer_copy
+ADD address VARCHAR(255);
+
+SELECT * FROM customer_copy;
+
+/* ALTER TABLE MODIFY Column Statement in SQL */
+
+ALTER TABLE customer_copy
+ALTER COLUMN address INT;
+
+/* ALTER TABLE DROP Column Statement Example: */
+
+ALTER TABLE customer_copy
+DROP COLUMN address;
+
+SELECT * FROM customer_copy;
