@@ -186,3 +186,16 @@ SELECT * FROM student;
 EXEC SP_RENAME 'student.phone', 'contact', 'COLUMN';
 
 SELECT * FROM student;
+
+--------------------
+-- TRUNCATE TABLE --
+--------------------
+
+/* TRUNCATE statement is a Data Definition Language (DDL) operation that is used to mark the extent of a table for deallocation (empty for reuse). 
+The result of this operation quickly removes all data from a table, typically bypassing several integrity-enforcing mechanisms. The major difference 
+between TRUNCATE and DROP is that truncate is used to delete the data inside the table not the whole table.*/
+
+TRUNCATE TABLE student;
+
+SELECT * FROM student;
+
