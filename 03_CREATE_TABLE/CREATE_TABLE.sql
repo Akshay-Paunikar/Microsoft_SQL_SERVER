@@ -199,3 +199,40 @@ TRUNCATE TABLE student;
 
 SELECT * FROM student;
 
+-----------------
+-- SHOW TABLES --
+-----------------
+
+SELECT name
+FROM sys.tables;
+
+----------------------
+-- Temporary Tables --
+----------------------
+
+/*Temporary Tables are most likely as Permanent Tables. Temporary Tables are Created in TempDB and are automatically deleted as soon as the last connection is 
+terminated. Temporary Tables helps us to store and process intermediate results. Temporary tables are very useful when we need to store temporary data.*/
+
+/*There are 2 types of Temporary Tables: Local Temporary Table, and Global Temporary Table.
+1. Local Temporary Table:
+A Local Temp Table is available only for the session that has created it. It is automatically dropped (deleted) when the connection that has created it, is closed. 
+To create Local Temporary Table Single "#" is used as the prefix of a table name.*/
+
+CREATE TABLE #emp_details (id INT, name VARCHAR(25));
+
+INSERT INTO #emp_details VALUES (01, 'Lalit'), (02, 'Atharva');
+
+SELECT * FROM #emp_details;
+
+/* 2. Global Temporary Table:
+To create a Global Temporary Table, add the “##” symbol before the table name.
+
+Global Temporary Tables are visible to all connections and Dropped when the last connection referencing the table is closed. Global Table Name must have an 
+Unique Table Name. There will be no random Numbers suffixed at the end of the Table Name. */
+
+CREATE TABLE ##EmpDetails (id INT, name VARCHAR(25));
+
+INSERT INTO ##EmpDetails VALUES (01, 'Lalit'), (02, 'Atharva');
+
+SELECT * FROM ##EmpDetails;
+
