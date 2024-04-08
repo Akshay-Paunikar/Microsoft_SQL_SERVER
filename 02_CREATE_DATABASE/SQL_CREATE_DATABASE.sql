@@ -49,3 +49,20 @@ DROP DATABASE deleteDB2;
 
 SELECT name
 FROM sys.databases;
+
+-------------------------
+-- SQL RENAME DATABASE --
+-------------------------
+
+/*ALTER SQL command is a DDL (Data Definition Language) statement. ALTER is used to update the structure of the table in the database like add, delete, modify 
+the attributes of the tables in the database. To rename a database in the SQL server, we use the ALTER-Modify keyword.*/
+
+CREATE DATABASE CAR;
+
+SELECT name
+FROM sys.databases;
+
+ALTER DATABASE CAR MODIFY NAME = transportDB;
+
+SELECT name
+FROM sys.databases;
