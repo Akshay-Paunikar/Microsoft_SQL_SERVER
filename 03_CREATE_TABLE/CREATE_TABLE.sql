@@ -108,3 +108,18 @@ LEFT JOIN customer_copy_2
 ON customer.CustomerId = customer_copy_2.CustomerId;
 
 SELECT * FROM customer_copy_3;
+
+----------------
+-- DROP TABLE --
+----------------
+
+/* The drop command in SQL is used to remove the whole table including data present inside it, indexes, triggers, constraints, and permission specifications for 
+that particular table. It is basically a DDL(data definition language) which is irreversible in nature. It means that once the user drops a table, there is no way 
+to undo the command. Therefore, the drop command must be used with extensive care. It can also delete a whole database or can simply delete a table, it depends on 
+the wish of the user.*/
+
+DROP TABLE customer_copy;
+DROP TABLE customer_copy_2;
+DROP TABLE customer_copy_3;
+DROP TABLE student;
+
