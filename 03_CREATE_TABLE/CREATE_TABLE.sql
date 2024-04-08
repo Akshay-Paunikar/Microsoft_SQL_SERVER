@@ -151,3 +151,38 @@ SELECT * FROM customer_copy;
 DELETE FROM customer_copy;
 
 /* NOTE: DELETE is a Data Manipulation Language (DML). Hence operations performed by DELETE can be rolled back or undone. */
+
+------------------
+-- RENAME TABLE --
+------------------
+
+/* SQL Server provides a standard stored procedure called SP_RENAME for renaming the user-created object in the current database. 
+The user-created object can be a table or column. */
+
+CREATE TABLE kids (
+id INT PRIMARY KEY,
+name VARCHAR(50),
+age INT,
+email VARCHAR(50),
+phone VARCHAR(10)
+);
+
+INSERT INTO kids (id, name, age, email, phone)
+VALUES
+(1, 'Amit', 20, 'amit@gmail.com', '9999999999'),
+(2, 'Rahul', 22, 'rahul@yahoo.com', '8888888888'),
+(3, 'Priya', 21, 'priya@hotmail.com', '7777777777'),
+(4, 'Sonia', 23, 'sonia@gmail.com', '6666666666'),
+(5, 'Kiran', 19, 'kiran@yahoo.com', '5555555555');
+
+SELECT * FROM kids;
+
+EXEC SP_RENAME 'kids', 'student';
+
+SELECT * FROM student;
+
+/* RENAME COLUMN NAME */
+
+EXEC SP_RENAME 'student.phone', 'contact', 'COLUMN';
+
+SELECT * FROM student;
