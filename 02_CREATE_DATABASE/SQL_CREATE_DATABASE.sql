@@ -28,3 +28,24 @@ FROM sys.databases;
 USE testDB;
 
 USE testDB2;
+
+-----------------------
+-- SQL Drop Database --
+-----------------------
+
+/*In SQL, sometimes there is a need to delete or drop the database on which you are working. Deleting a database means deleting everything which includes all 
+the data such as tables, views, indexes, schemas, constraints, etc. In order to delete a database we use the DROP DATABASE command. We generally delete a 
+database when the database is no longer required and we want to free the memory that the database is consuming.*/
+
+CREATE DATABASE deleteDB;
+
+CREATE DATABASE deleteDB2;
+
+SELECT name
+FROM sys.databases;
+
+DROP DATABASE deleteDB;
+DROP DATABASE deleteDB2;
+
+SELECT name
+FROM sys.databases;
